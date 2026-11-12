@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b18">
+<meta name="description" content="COMMUNITY — място за общуване, нови запознанства и партньорства между Discord общности.">
+<title>COMMUNITY | Официален сайт</title>
+<style>
+:root{
+  --bg:#080a14;--panel:#111629;--panel2:#171d34;--line:rgba(190,199,255,.14);
+  --text:#f7f8ff;--muted:#aeb6ce;--blue:#6687ff;--violet:#a16bff;--cyan:#61d9ff;
+  --gold:#f2ce8a;--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.38)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+radial-gradient(ellipse at 12% 10%,rgba(76,102,255,.18),transparent 34%),
+radial-gradient(ellipse at 90% 28%,rgba(151,78,255,.16),transparent 32%),
+radial-gradient(ellipse at 48% 100%,rgba(40,159,208,.10),transparent 36%),#080a14}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.nav-wrap{position:sticky;top:0;z-index:20;background:rgba(8,10,20,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.16em}
+.brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 8px 25px #7184ff55;font-size:19px}
+.nav-links{display:flex;align-items:center;gap:25px;color:#c4cbe0;font-size:13px;font-weight:650}
+.nav-links a:hover{color:white}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:13px;border:1px solid transparent;font-weight:800;font-size:14px;cursor:pointer;transition:.2s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn-primary{color:white;background:linear-gradient(110deg,#547cff,#9162f5);box-shadow:0 12px 32px #657aff40}
+.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.045);color:#e6eaff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+.hero{position:relative;overflow:hidden;padding:112px 0 92px}
+.hero:before{content:"";position:absolute;width:570px;height:570px;border-radius:50%;right:-80px;top:-130px;background:radial-gradient(circle,rgba(102,135,255,.22),rgba(161,107,255,.08) 42%,transparent 70%);filter:blur(8px);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:55px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#c7cfff;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:850}
+.dot{width:7px;height:7px;border-radius:50%;background:#79e3c0;box-shadow:0 0 14px #79e3c0}
+h1{font-size:clamp(48px,7vw,82px);line-height:.99;letter-spacing:-.055em;margin:20px 0 22px}
+.gradient{background:linear-gradient(100deg,#fff 12%,#a9baff 48%,#c59cff 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:17px;line-height:1.85;color:var(--muted);max-width:610px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-note{font-size:12px;color:#818ba9;margin-top:18px}
+.visual{min-height:390px;position:relative;display:grid;place-items:center}
+.orbit{width:min(390px,85vw);aspect-ratio:1;border:1px solid rgba(165,179,255,.2);border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,rgba(98,119,255,.16),rgba(104,79,182,.06) 48%,transparent 70%);box-shadow:inset 0 0 65px #7282ff12,0 0 90px #5b65ff12}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(170,180,255,.14);border-radius:50%;inset:12%}
+.orbit:after{inset:25%;border-style:dashed}
+.core{width:150px;height:150px;border-radius:42px;display:grid;place-items:center;background:linear-gradient(145deg,#607fff,#9c62ee);font-size:57px;box-shadow:0 20px 65px #6d70ff70;transform:rotate(-7deg)}
+.float-card{position:absolute;padding:13px 16px;border:1px solid var(--line);border-radius:15px;background:rgba(18,24,44,.9);backdrop-filter:blur(12px);box-shadow:var(--shadow);font-size:12px;color:#dce2ff}
+.float-card b{display:block;color:white;font-size:14px}
+.fc1{top:15%;left:-1%}.fc2{right:-2%;top:30%}.fc3{bottom:13%;left:9%}
+section{padding:82px 0}
+.section-head{max-width:690px;margin-bottom:34px}
+.kicker{color:#9caeff;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:850}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.035em;margin:10px 0 14px}
+.section-head p,.muted{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{background:linear-gradient(145deg,rgba(24,31,56,.88),rgba(14,18,34,.92));border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 10px;font-size:19px}
+.panel p{margin:0;color:var(--muted);font-size:14px;line-height:1.85}
+.icon-box{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(135deg,#597cff35,#a16bff35);border:1px solid #8799ff30;font-size:21px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}
+.value{padding:22px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.value strong{display:block;margin:8px 0 5px}.value p{margin:0;color:var(--muted);font-size:13px}
+.partnerships{background:linear-gradient(180deg,transparent,rgba(35,40,80,.16),transparent)}
+.slider-shell{position:relative}
+.slides{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.partner-card{min-height:225px;padding:25px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,#171d35,#101426);position:relative;overflow:hidden}
+.partner-card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;bottom:-75px;background:#7b79ff22;filter:blur(4px)}
+.partner-logo{width:55px;height:55px;border-radius:17px;background:linear-gradient(135deg,#5d7cff,#a36aff);display:grid;place-items:center;font-size:24px;margin-bottom:20px}
+.partner-card h3{margin:0 0 7px}.partner-card p{color:var(--muted);font-size:13px;margin:0 0 18px}
+.tag{display:inline-flex;border:1px solid #8da1ff38;color:#c5ceff;background:#7387ff12;border-radius:30px;padding:5px 10px;font-size:10px;font-weight:800;letter-spacing:.08em}
+.slider-controls{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}
+.slider-controls button{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#171d35;color:white;font-size:18px;cursor:pointer}
+.partner-note{font-size:12px;color:#8993b0;margin-top:17px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.benefit{padding:24px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.benefit .emoji{font-size:25px}.benefit h3{font-size:16px;margin:12px 0 6px}.benefit p{font-size:13px;color:var(--muted);margin:0}
+.form-section{background:radial-gradient(ellipse at 50% 50%,rgba(91,104,220,.13),transparent 65%)}
+.form-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.form-info{position:sticky;top:105px}
+.form-info ul{list-style:none;padding:0;margin:22px 0}.form-info li{color:#c1c9df;margin:12px 0;font-size:13px}
+.form-info li:before{content:"✓";color:#83e0c1;font-weight:900;margin-right:10px}
+form{display:grid;gap:15px}
+.field{display:grid;gap:7px}
+label{font-size:12px;color:#dce2f5;font-weight:750}
+input,textarea,select{width:100%;border:1px solid #343d5d;background:#0d1223;color:white;border-radius:12px;padding:13px 14px;outline:none}
+input:focus,textarea:focus,select:focus{border-color:#8295ff;box-shadow:0 0 0 3px #8295ff20}
+textarea{min-height:100px;resize:vertical}
+select option{background:#111629}
+.form-help{font-size:11px;color:#8993ae}
+#application-output{display:none;margin-top:16px}
+#application-output textarea{min-height:190px}
+.status{font-size:12px;color:#8ce2c2;min-height:18px}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+details{border:1px solid var(--line);border-radius:15px;background:#12182b;padding:18px 20px}
+summary{cursor:pointer;font-weight:800;font-size:14px}
+details p{color:var(--muted);font-size:13px;line-height:1.75;margin:12px 0 0}
+.cta{padding:38px;border-radius:25px;text-align:center;border:1px solid #a2aaff35;background:linear-gradient(115deg,#26366b,#3c2867 58%,#1b3150);box-shadow:var(--shadow)}
+.cta h2{margin-top:0}.cta p{max-width:650px;margin:0 auto 22px;color:#d4daf2}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#8791ac;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.mobile-only{display:none}
+@media(max-width:850px){
+ .hero-grid,.form-layout{grid-template-columns:1fr}.visual{min-height:340px}.form-info{position:static}
+ .nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#0d1120;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+ .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+}
+@media(max-width:650px){
+ .container{width:min(100% - 30px,1160px)}.hero{padding:76px 0 55px}.visual{min-height:290px}
+ .orbit{width:290px}.core{width:115px;height:115px;border-radius:32px;font-size:43px}
+ .fc1{left:-2%}.fc2{right:-2%}.float-card{padding:10px 12px;font-size:10px}
+ .about-grid,.values,.slides,.benefits,.faq-grid{grid-template-columns:1fr}
+ section{padding:62px 0}.panel{padding:23px}.cta{padding:28px 20px}
+ .hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+ <nav class="container">
+  <a class="brand" href="#home"><span class="brand-mark">C</span><span>COMMUNITY</span></a>
+  <div class="nav-links" id="navLinks">
+   <a href="#about">За нас</a><a href="#benefits">Предимства</a><a href="#partners">Партньорства</a><a href="#apply">Кандидатура</a><a href="#faq">Въпроси</a>
+  </div>
+  <a class="btn btn-primary nav-cta" href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">Влез в Discord ↗</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Отвори меню">☰</button>
+ </nav>
+</div>
+
+<header class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="dot"></span> МЯСТО ЗА ХОРА И ИДЕИ</div>
+   <h1>Повече от сървър.<br><span class="gradient">Една общност.</span></h1>
+   <p class="lead">Добре дошъл в COMMUNITY — място за нови запознанства, приятни разговори, споделени интереси и съвместни инициативи. Свързваме хора и Discord общности, за да създаваме нови възможности и да се развиваме заедно.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">✦ Присъедини се към нас</a>
+    <a class="btn btn-ghost" href="#partners">Разгледай партньорствата ↓</a>
+   </div>
+   <div class="hero-note">Отворени сме за нови членове, идеи и коректни партньорства.</div>
+  </div>
+  <div class="visual" aria-label="Графична илюстрация на общността">
+   <div class="orbit"><div class="core">✦</div></div>
+   <div class="float-card fc1">🌐 <b>Една общност</b>Много гледни точки</div>
+   <div class="float-card fc2">🤝 <b>Партньорства</b>Заедно сме по-силни</div>
+   <div class="float-card fc3">💬 <b>Общуване</b>Нови запознанства</div>
+  </div>
+ </div>
+</header>
+
+<main>
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Кои сме ние</div><h2>Общност, изградена около <span class="gradient">хората.</span></h2><p>COMMUNITY събира хора, които искат да общуват, да намират съмишленици и да бъдат част от позитивна и развиваща се Discord среда.</p></div>
+  <div class="about-grid">
+   <article class="panel"><div class="icon-box">💬</div><h3>Място за общуване</h3><p>Тук можеш да се запознаеш с нови хора, да разговаряш, да споделяш интересите си и да прекарваш свободното си време в приятна компания. Насърчаваме уважението, добрия тон и активното участие.</p></article>
+   <article class="panel"><div class="icon-box">🌱</div><h3>Място за развитие</h3><p>Вярваме, че добрата общност се развива чрез идеи, инициативност и сътрудничество. Даваме пространство на членовете и партньорите да предлагат идеи и да участват в изграждането на общността.</p></article>
+  </div>
+  <div class="values">
+   <div class="value"><div>🛡️</div><strong>Коректност</strong><p>Уважително отношение и ясна комуникация.</p></div>
+   <div class="value"><div>🤝</div><strong>Сътрудничество</strong><p>Подкрепяме добрите идеи и взаимната помощ.</p></div>
+   <div class="value"><div>🚀</div><strong>Развитие</strong><p>Работим за по-активна и сплотена общност.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="partnerships" id="partners">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Нашата мрежа</div><h2>Партньорства и <span class="gradient">съвместни проекти.</span></h2><p>Тук представяме общностите, с които изграждаме връзки. Секцията е подготвена за добавяне на реални партньори след потвърждение на сътрудничеството.</p></div>
+  <div class="slider-shell">
+   <div class="slides" id="slides">
+    <article class="partner-card"><div class="partner-logo">🤝</div><h3>Твоят сървър</h3><p>Това място може да бъде запазено за следващия ни официален партньор.</p><span class="tag">ОТВОРЕНО ЗА ПАРТНЬОРСТВА</span></article>
+    <article class="partner-card"><div class="partner-logo">🌐</div><h3>Нова общност</h3><p>Свържи се с екипа ни и нека обсъдим възможностите за съвместна работа.</p><span class="tag">КАНДИДАТСТВАЙ</span></article>
+    <article class="partner-card"><div class="partner-logo">⭐</div><h3>Бъдещ партньор</h3><p>Изграждаме дългосрочни отношения с активни и коректни общности.</p><span class="tag">ТВОЕТО МЯСТО Е ТУК</span></article>
+   </div>
+   <div class="slider-controls"><button type="button" id="prevSlide" aria-label="Предишен слайд">←</button><button type="button" id="nextSlide" aria-label="Следващ слайд">→</button></div>
+  </div>
+  <p class="partner-note">Забележка: показаните карти са примерни места за бъдещи партньори, а не потвърдени партньорства.</p>
+ </div>
+</section>
+
+<section id="benefits">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Защо да се присъединиш</div><h2>Твоето място в <span class="gradient">COMMUNITY.</span></h2><p>Искаме всеки член да има причина да се включва, да общува и да допринася със собствените си идеи.</p></div>
+  <div class="benefits">
+   <article class="benefit"><div class="emoji">👥</div><h3>Нови запознанства</h3><p>Открий хора със сходни интереси и създай нови приятелства.</p></article>
+   <article class="benefit"><div class="emoji">🎉</div><h3>Активности и идеи</h3><p>Участвай в общностни инициативи и предлагай собствени идеи.</p></article>
+   <article class="benefit"><div class="emoji">🛡️</div><h3>Екип и организация</h3><p>Общуване с екип, който се стреми към подредена и приятна среда.</p></article>
+   <article class="benefit"><div class="emoji">🤝</div><h3>Възможности за партньорство</h3><p>Свързване с други Discord сървъри и създатели на общности.</p></article>
+   <article class="benefit"><div class="emoji">💡</div><h3>Споделяне на идеи</h3><p>Предлагай подобрения и участвай в развитието на сървъра.</p></article>
+   <article class="benefit"><div class="emoji">🌟</div><h3>Обща атмосфера</h3><p>Изграждаме пространство, в което уважението и добрият тон са важни.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="form-section" id="apply">
+ <div class="container form-layout">
+  <div class="form-info">
+   <div class="kicker">Стани наш партньор</div>
+   <h2>Нека създадем нещо <span class="gradient">заедно.</span></h2>
+   <p class="muted">Имаш Discord сървър или представляваш общност? Изпрати кандидатурата си чрез формата. Екипът ни може да се запознае с предложението и да продължи разговора в Discord.</p>
+   <ul><li>Попълни данните за своята общност.</li><li>Опиши какво партньорство предлагаш.</li><li>Изпрати готовия текст на екипа ни в Discord.</li></ul>
+   <a class="btn btn-ghost" href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">Отвори Discord ↗</a>
+  </div>
+  <div class="panel">
+   <h3>📨 Кандидатура за партньорство</h3>
+   <p class="muted" style="font-size:12px;margin:0 0 20px">Попълни полетата. Сайтът ще подготви готово съобщение, което можеш да копираш и изпратиш на екипа ни.</p>
+   <form id="partnerForm">
+    <div class="field"><label for="person">Твоето име / Discord потребителско име *</label><input id="person" name="person" required maxlength="80" placeholder="Напр. username"></div>
+    <div class="field"><label for="server">Име на Discord сървъра *</label><input id="server" name="server" required maxlength="100" placeholder="Име на общността"></div>
+    <div class="field"><label for="invite">Линк към Discord сървъра *</label><input id="invite" name="invite" type="url" required placeholder="https://discord.gg/..."></div>
+    <div class="field"><label for="members">Приблизителен брой членове</label><select id="members" name="members"><option value="Под 50">Под 50</option><option value="50–100">50–100</option><option value="100–300">100–300</option><option value="300–500">300–500</option><option value="500+">500+</option></select></div>
+    <div class="field"><label for="proposal">Какво партньорство предлагаш? *</label><textarea id="proposal" name="proposal" required maxlength="1000" placeholder="Опиши накратко идеята си, какво предлагаш и как двете общности могат да си бъдат полезни."></textarea></div>
+    <button class="btn btn-primary" type="submit">Създай кандидатурата →</button>
+   </form>
+   <div id="application-output">
+    <div class="field"><label for="applicationText">Готова кандидатура</label><textarea id="applicationText" readonly></textarea></div>
+    <button class="btn btn-primary" type="button" id="copyApplication">Копирай кандидатурата</button>
+    <a class="btn btn-ghost" style="margin-top:8px" href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">Отвори Discord и я изпрати ↗</a>
+    <div class="status" id="copyStatus" aria-live="polite"></div>
+   </div>
+   <p class="form-help" style="margin:16px 0 0">Формата не изпраща автоматично данни и не съхранява информация. Тя генерира текст за копиране и изпращане в Discord.</p>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Полезна информация</div><h2>Често задавани <span class="gradient">въпроси.</span></h2></div>
+  <div class="faq-grid">
+   <details><summary>Как да се присъединя?</summary><p>Натисни някой от бутоните за Discord в сайта и използвай поканата, за да влезеш в COMMUNITY.</p></details>
+   <details><summary>Мога ли да предложа партньорство?</summary><p>Да. Попълни кандидатурата в сайта, копирай генерирания текст и го изпрати на екипа ни в Discord.</p></details>
+   <details><summary>Какви сървъри търсим за партньорство?</summary><p>Отворени сме към активни и коректни общности, които искат взаимно полезно и ясно договорено сътрудничество.</p></details>
+   <details><summary>Къде ще бъдат показани партньорите?</summary><p>След потвърждение на партньорството информацията за съответната общност може да бъде добавена в секцията „Партньорства“.</p></details>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="cta">
+   <div class="eyebrow" style="justify-content:center">ТВОЯТА ОБЩНОСТ ТЕ ОЧАКВА</div>
+   <h2>Готов ли си да станеш част от <span class="gradient">COMMUNITY?</span></h2>
+   <p>Присъедини се, запознай се с хората и бъди част от развитието на една общност, която вярва в общуването и партньорството.</p>
+   <a class="btn btn-primary" href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">Присъедини се сега ↗</a>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>© 2026 COMMUNITY. Всички права запазени.</span><span>Изградено за общност, идеи и партньорства.</span><a href="https://discord.gg/ZYV8kHgVx" target="_blank" rel="noopener">Discord ↗</a></div></footer>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// Simple responsive partnership showcase slider.
+const slides=document.getElementById('slides');
+let slideIndex=0;
+function slideStep(dir){
+  const cards=[...slides.children];
+  const visible=window.innerWidth<=650?1:3;
+  const max=Math.max(0,cards.length-visible);
+  slideIndex=Math.max(0,Math.min(max,slideIndex+dir));
+  cards.forEach((card,i)=>card.style.display=(i>=slideIndex&&i<slideIndex+visible)?'block':'none');
+}
+document.getElementById('prevSlide').addEventListener('click',()=>slideStep(-1));
+document.getElementById('nextSlide').addEventListener('click',()=>slideStep(1));
+window.addEventListener('resize',()=>{slideIndex=0;slideStep(0)});
+slideStep(0);
+
+// The form prepares a message locally; it does not transmit or store submissions.
+const form=document.getElementById('partnerForm');
+const output=document.getElementById('application-output');
+const applicationText=document.getElementById('applicationText');
+form.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!form.reportValidity()) return;
+  const data=new FormData(form);
+  const message=
+`📨 КАНДИДАТУРА ЗА ПАРТНЬОРСТВО — COMMUNITY
+
+👤 Представител: ${data.get('person')}
+🌐 Discord сървър: ${data.get('server')}
+🔗 Покана: ${data.get('invite')}
+👥 Брой членове: ${data.get('members')}
+
+🤝 ПРЕДЛОЖЕНИЕ:
+${data.get('proposal')}
+
+Очаквам обратна връзка от екипа на COMMUNITY.`;
+  applicationText.value=message;
+  output.style.display='block';
+  output.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+document.getElementById('copyApplication').addEventListener('click',async()=>{
+  const status=document.getElementById('copyStatus');
+  try{
+    await navigator.clipboard.writeText(applicationText.value);
+    status.textContent='Кандидатурата е копирана. Отвори Discord и я изпрати на екипа.';
+  }catch(e){
+    applicationText.focus();applicationText.select();
+    status.textContent='Маркирахме текста. Копирай го ръчно и го изпрати в Discord.';
+  }
+});
+</script>
+</body>
+</html>
